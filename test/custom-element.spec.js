@@ -2,7 +2,7 @@
 /* eslint-env mocha */
 /* global browser: false, page: false, assert: false, expect: false */
 
-import service from 'ventriloquist'
+import service from 'ventrilo'
 
 const CUSTOM_ELEMENT = 'example-element'
 const EXTENDED_ELEMENT = null

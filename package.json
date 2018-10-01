@@ -1,7 +1,7 @@
 {
-  "name": "ventriloquist-bootstrap",
+  "name": "ventrilo-bootstrap",
   "version": "1.0.0",
-  "description": "Custom Elements, Shadow DOM, and Custom Events test bed using Ventriloquist for Puppeteer, Mocha, Chai.",
+  "description": "Custom Element, Shadow DOM, and Custom Event test execution environment using Ventriloquist for Puppeteer, Mocha, Chai, and Rollup.",
   "main": "dist/bootstrap.esm.js",
   "dependencies": {
     "babel-core": "^6.26.3",
@@ -16,6 +16,7 @@
   "devDependencies": {
     "@webcomponents/webcomponentsjs": "^2.1.0",
     "jsdoc-to-markdown": "^4.0.1",
+    "research-element": "^1.0.0",
     "rollup": "^0.64.0",
     "rollup-plugin-commonjs": "^9.1.0",
     "rollup-plugin-json": "^3.1.0",
@@ -24,7 +25,7 @@
     "rollup-plugin-serve": "^0.4.2",
     "snazzy": "^7.1.1",
     "standard": "^11.0.1",
-    "ventriloquist": "../ventriloquist-lib"
+    "ventrilo": "latest"
   },
   "scripts": {
     "prebuild": "npm run lint",
@@ -34,15 +35,10 @@
     "test:serve": "rollup --config rollup.test.js",
     "lint": "standard --fix './{src,test}/**/*.{js,mjs}' --verbose | snazzy"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.comcast.com/tmulle204/truncate-title.git"
-  },
   "config": {
     "ports": {
       "test": 10002
-    },
-    ""
+    }
   },
   "babel": {
     "presets": [

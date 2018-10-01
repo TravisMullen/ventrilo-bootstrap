@@ -57,8 +57,12 @@ Puppeteer launch options:
 
 // expose variables
 before(async () => {
+  /** Stop running server */
   testServer = startServer('test:serve')
 
+  /** Assign global variables
+    * @see {@link} https://github.com/TravisMullen/swap-global
+    */
   // shared browser session
   swap('browser', await puppeteer.launch(opts))
   // shared page state
@@ -68,13 +72,16 @@ before(async () => {
   swap('assert', assert)
 })
 
+/** After all test cases */
 after(async () => {
+  /** Stop running server */
   await testServer.kill()
 
+  /** Close pages and browser */
   await page.close()
-
   await browser.close()
 
+  /** Restore global variables. */
   await restore()
 })
 

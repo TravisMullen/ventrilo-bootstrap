@@ -1,6 +1,13 @@
 /* eslint-env mocha */
 /* global page: false, expect: false */
 
+/**
+ * Describe a test scenario to confirm server is running
+ * and can be accessed by all preceeding test cases.
+ * Node process will exit on failure of valid response.
+ *
+ * @param {serverPort} port to use address.
+ */
 const validateServer = (serverPort = 10001) => {
   // if (!page) {
   //   throw new Error('`page` must be defined in `global` scope as `global.page` before calling `validateServer`')

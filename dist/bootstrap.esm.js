@@ -40,6 +40,13 @@ const startServer = (npmScript = 'serve') => {
 /* eslint-env mocha */
 /* global page: false, expect: false */
 
+/**
+ * Describe a test scenario to confirm server is running
+ * and can be accessed by all preceeding test cases.
+ * Node process will exit on failure of valid response.
+ *
+ * @param {serverPort} port to use address.
+ */
 const validateServer = (serverPort = 10001) => {
   // if (!page) {
   //   throw new Error('`page` must be defined in `global` scope as `global.page` before calling `validateServer`')
@@ -120,14 +127,17 @@ const opts = {
 
 /** @see {@link} https://github.com/GoogleChrome/puppeteer/blob/master/docs/api.md#puppeteerlaunchoptions */
 console.log(`
-  Puppeteer launch options:
-  
+Puppeteer launch options:
 `, opts);
 
 // expose variables
 before(async () => {
+  /** Stop running server */
   testServer = startServer('test:serve');
 
+  /** Assign global variables
+    * @see {@link} https://github.com/TravisMullen/swap-global
+    */
   // shared browser session
   swap('browser', await puppeteer.launch(opts));
   // shared page state
@@ -137,13 +147,16 @@ before(async () => {
   swap('assert', assert);
 });
 
+/** After all test cases */
 after(async () => {
+  /** Stop running server */
   await testServer.kill();
 
+  /** Close pages and browser */
   await page.close();
-
   await browser.close();
 
+  /** Restore global variables. */
   await restore();
 });
 
