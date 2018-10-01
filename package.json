@@ -1,0 +1,80 @@
+{
+  "name": "ventriloquist-bootstrap",
+  "version": "1.0.0",
+  "description": "Custom Elements, Shadow DOM, and Custom Events test bed using Ventriloquist for Puppeteer, Mocha, Chai.",
+  "main": "dist/bootstrap.esm.js",
+  "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-env": "^1.7.0",
+    "babel-register": "^6.26.0",
+    "chai": "^4.1.2",
+    "mocha": "^5.2.0",
+    "puppeteer": "^1.8.0",
+    "swap-global": "^1.0.3"
+  },
+  "devDependencies": {
+    "@webcomponents/webcomponentsjs": "^2.1.0",
+    "jsdoc-to-markdown": "^4.0.1",
+    "rollup": "^0.64.0",
+    "rollup-plugin-commonjs": "^9.1.0",
+    "rollup-plugin-json": "^3.1.0",
+    "rollup-plugin-livereload": "^0.6.0",
+    "rollup-plugin-node-resolve": "^3.0.0",
+    "rollup-plugin-serve": "^0.4.2",
+    "snazzy": "^7.1.1",
+    "standard": "^11.0.1",
+    "ventriloquist": "../ventriloquist-lib"
+  },
+  "scripts": {
+    "prebuild": "npm run lint",
+    "build": "rollup --config rollup.build.js",
+    "pretest": "npm run build",
+    "test": "mocha --reporter spec --require babel-core/register ./dist/bootstrap.esm.js --recursive './{src,test}/*.{spec,test}.*'",
+    "test:serve": "rollup --config rollup.test.js",
+    "lint": "standard --fix './{src,test}/**/*.{js,mjs}' --verbose | snazzy"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.comcast.com/tmulle204/truncate-title.git"
+  },
+  "config": {
+    "ports": {
+      "test": 10002
+    },
+    ""
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "engines": {
+    "node": ">= 8.6"
+  },
+  "license": "MIT",
+  "files": [
+    "dist"
+  ],
+  "keywords": [
+    "mocha",
+    "chai",
+    "puppeteer",
+    "unit-testing",
+    "testing",
+    "test",
+    "shadowroot",
+    "shadow-root",
+    "shadowdom",
+    "shadow-dom",
+    "custom-event",
+    "customevent",
+    "webcomponents",
+    "web-components",
+    "custom-elements",
+    "customelements",
+    "es6",
+    "es2015",
+    "quick-start"
+  ]
+}
