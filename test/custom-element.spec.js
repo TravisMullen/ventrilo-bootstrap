@@ -4,7 +4,7 @@
 
 import service from 'ventrilo'
 
-const CUSTOM_ELEMENT = 'example-element'
+const CUSTOM_ELEMENT = 'research-element'
 const EXTENDED_ELEMENT = null
 const CUSTOM_EVENT_TYPE = 'example-event'
 const TEST_ELEMENT_ID = 'this-element-is-for-testing-only'

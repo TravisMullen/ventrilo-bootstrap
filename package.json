@@ -2,7 +2,8 @@
   "name": "ventrilo-bootstrap",
   "version": "1.0.0",
   "description": "Custom Element, Shadow DOM, and Custom Event test execution environment using [Ventrilo](https://github.com/TravisMullen/ventrilo) for Puppeteer, Mocha, Chai, and Rollup.",
-  "main": "dist/bootstrap.esm.js",
+  "main": "dist/bootstrap.cjs.js",
+  "module": "dist/bootstrap.esm.js",
   "dependencies": {
     "babel-core": "^6.26.3",
     "babel-polyfill": "^6.26.0",
@@ -75,11 +76,11 @@
   ],
   "homepage": "https://github.com/TravisMullen/ventrilo-bootstrap#readme",
   "bugs": {
-    "url": "https://github.com/TravisMullen/ventrilo-bootstrap/issues",
-    "email": "travis@travismullen.com"
+    "url": "https://github.com/TravisMullen/ventrilo-bootstrap/issues"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/TravisMullen/ventrilo-bootstrap.git"
-  }
+  },
+  "author": "Travis Mullen <travis@travismullen.com> (http://travismullen.com/)"
 }
