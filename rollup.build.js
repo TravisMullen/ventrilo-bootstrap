@@ -3,7 +3,8 @@ import json from 'rollup-plugin-json'
 
 const external = [
   ...Object.keys(pkg.dependencies),
-  'child_process'
+  'child_process',
+  'fs'
 ]
 
 export default {

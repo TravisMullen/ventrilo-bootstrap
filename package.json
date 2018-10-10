@@ -12,7 +12,8 @@
     "chai": "^4.1.2",
     "mocha": "^5.2.0",
     "puppeteer": "^1.8.0",
-    "swap-global": "^1.0.3"
+    "swap-global": "^1.0.3",
+    "ventrilo": "latest"
   },
   "devDependencies": {
     "@webcomponents/webcomponentsjs": "^2.1.0",
@@ -25,8 +26,7 @@
     "rollup-plugin-node-resolve": "^3.0.0",
     "rollup-plugin-serve": "^0.4.2",
     "snazzy": "^7.1.1",
-    "standard": "^11.0.1",
-    "ventrilo": "latest"
+    "standard": "^11.0.1"
   },
   "scripts": {
     "prebuild": "npm run lint",

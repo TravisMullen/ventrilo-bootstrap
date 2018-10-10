@@ -1,6 +1,6 @@
 // /* eslint-disable no-unused-vars */
 // /* eslint-env mocha */
-// /* global browser: false, page: false, assert: false, expect: false */
+// /* global ventrilo: false, browser: false, page: false, assert: false, expect: false */
 
 // import service from 'ventriloquist'
 
@@ -16,10 +16,10 @@
 // let elementHandle
 
 // // define custom properties/attributes
-// service.addMethod('color')
-// service.addMethod('trigger')
-// service.addMethod('headline')
-// service.addMethod('defaults')
+// ventrilo.addMethod('color')
+// ventrilo.addMethod('trigger')
+// ventrilo.addMethod('headline')
+// ventrilo.addMethod('defaults')
 
 // describe(`Example test cases for custom elements ${CUSTOM_ELEMENT}`, function () {
 //   // `timeout()` must be inside standard (non-arrow) function
@@ -39,12 +39,12 @@
 //     // wait for it to render in the DOM.
 //     await page.waitFor(CUSTOM_ELEMENT)
 //     // grab the rendered element for test analysis.
-//     elementHandle = await service.customElementHandle(CUSTOM_ELEMENT)
+//     elementHandle = await ventrilo.customElementHandle(CUSTOM_ELEMENT)
 //   })
 
 //   afterEach(async () => {
 //     // clean up mess.
-//     await service.removeCustomElementHandle(customElementCreate)
+//     await ventrilo.removeCustomElementHandle(customElementCreate)
 //     await elementHandle.dispose()
 //     await customElementCreate.dispose()
 //   })
@@ -57,7 +57,7 @@
 
 //       expect(testIdValue).to.equal(TEST_ELEMENT_ID)
 
-//       await service.setId(elementHandle, updatedId)
+//       await ventrilo.setId(elementHandle, updatedId)
 //       const idValue = await page.$eval(CUSTOM_ELEMENT, e => e.id)
 
 //       expect(idValue).to.equal(updatedId)
@@ -68,7 +68,7 @@
 //     // it(`should render title attribute as textContent`, async () => {
 //     //   const testValue = `${new Date()} Sartorial jean shorts actually.`
 
-//     //   await service.setAttributeTitle(elementHandle, testValue)
+//     //   await ventrilo.setAttributeTitle(elementHandle, testValue)
 //     //   const textContent = await page.$eval(CUSTOM_ELEMENT, e => e.textContent)
 
 //     //   expect(textContent).to.equal(testValue)
@@ -77,12 +77,12 @@
 //     // it(`should render a attribute as textContent inside of shadowRoot`, async () => {
 //     //   const testValue = `${new Date()} Sartorial jean shorts actually.`
 
-//     //   const { headline } = await service.getDefaults(elementHandle, 'h1')
-//     //   const priorValue = await service.textContent(elementHandle, 'h1')
+//     //   const { headline } = await ventrilo.getDefaults(elementHandle, 'h1')
+//     //   const priorValue = await ventrilo.textContent(elementHandle, 'h1')
 //     //   expect(priorValue).to.equal(headline)
 
-//     //   await service.setAttributeHeadline(elementHandle, testValue)
-//     //   const updatedValue = await service.textContent(elementHandle, 'h1')
+//     //   await ventrilo.setAttributeHeadline(elementHandle, testValue)
+//     //   const updatedValue = await ventrilo.textContent(elementHandle, 'h1')
 
 //     //   expect(updatedValue).to.equal(testValue)
 //     // })
@@ -90,12 +90,12 @@
 //     // it(`should render a property as textContent inside of shadowRoot`, async () => {
 //     //   const testValue = `${new Date()} Sartorial jean shorts actually.`
 
-//     //   const { headline } = await service.getDefaults(elementHandle, 'h1')
-//     //   const priorValue = await service.textContent(elementHandle, 'h1')
+//     //   const { headline } = await ventrilo.getDefaults(elementHandle, 'h1')
+//     //   const priorValue = await ventrilo.textContent(elementHandle, 'h1')
 //     //   expect(priorValue).to.equal(headline)
 
-//     //   await service.setHeadline(elementHandle, testValue)
-//     //   const updatedValue = await service.textContent(elementHandle, 'h1')
+//     //   await ventrilo.setHeadline(elementHandle, testValue)
+//     //   const updatedValue = await ventrilo.textContent(elementHandle, 'h1')
 
 //     //   expect(updatedValue).to.equal(testValue)
 //     // })
@@ -103,13 +103,13 @@
 //     it(`emmit CustomEvent of ${CUSTOM_EVENT_TYPE} when augmentation is complete`, async () => {
 //       const testValue = `${new Date()} Sartorial jean shorts actually, tattooed kickstarter direct trade try-hard woke four dollar toast truffaut. Green juice keffiyeh four dollar toast hot chicken pabst typewriter scenester before they sold out banh mi roof party bushwick ugh ennui edison bulb echo park. Street art edison bulb heirloom occupy health goth, cloud bread af small batch deep v crucifix intelligentsia try-hard. Wayfarers hexagon chartreuse, selvage lo-fi coloring book vape. Raw denim marfa taiyaki photo booth.`
 
-//       const ce = await service.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
+//       const ce = await ventrilo.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
 
-//       await service.setAttributeTrigger(elementHandle, testValue)
+//       await ventrilo.setAttributeTrigger(elementHandle, testValue)
 
-//       await service.waitForCustomEvent(MAX_TIMEOUT)
+//       await ventrilo.waitForCustomEvent(MAX_TIMEOUT)
 
-//       const { type } = await service.customEventGetter()
+//       const { type } = await ventrilo.customEventGetter()
 //       expect(type).to.equal(CUSTOM_EVENT_TYPE)
 
 //       await ce.dispose()
@@ -118,11 +118,11 @@
 //     // it(`should have opacity of 1 when augmentation is complete`, async () => {
 //     //   const testValue = `${new Date()} Sartorial jean shorts actually, tattooed kickstarter direct trade try-hard woke four dollar toast truffaut. Green juice keffiyeh four dollar toast hot chicken pabst typewriter scenester before they sold out banh mi roof party bushwick ugh ennui edison bulb echo park. Street art edison bulb heirloom occupy health goth, cloud bread af small batch deep v crucifix intelligentsia try-hard. Wayfarers hexagon chartreuse, selvage lo-fi coloring book vape. Raw denim marfa taiyaki photo booth.`
 
-//     //   const ce = await service.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
+//     //   const ce = await ventrilo.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
 
-//     //   await service.setAttributeTitle(elementHandle, testValue)
+//     //   await ventrilo.setAttributeTitle(elementHandle, testValue)
 
-//     //   await service.waitForCustomEvent(MAX_TIMEOUT)
+//     //   await ventrilo.waitForCustomEvent(MAX_TIMEOUT)
 
 //     //   const getOpacity = await page.$eval(CUSTOM_ELEMENT, e => e.style.opacity)
 
@@ -134,11 +134,11 @@
 //     // it(`should render truncated variation of title tag string`, async () => {
 //     //   const testValue = `${new Date()} Sartorial jean shorts actually, tattooed kickstarter direct trade try-hard woke four dollar toast truffaut. Green juice keffiyeh four dollar toast hot chicken pabst typewriter scenester before they sold out banh mi roof party bushwick ugh ennui edison bulb echo park. Street art edison bulb heirloom occupy health goth, cloud bread af small batch deep v crucifix intelligentsia try-hard. Wayfarers hexagon chartreuse, selvage lo-fi coloring book vape. Raw denim marfa taiyaki photo booth.`
 
-//     //   const ce = await service.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
+//     //   const ce = await ventrilo.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
 
-//     //   await service.setTitle(elementHandle, testValue)
+//     //   await ventrilo.setTitle(elementHandle, testValue)
 
-//     //   await service.waitForCustomEvent(MAX_TIMEOUT)
+//     //   await ventrilo.waitForCustomEvent(MAX_TIMEOUT)
 
 //     //   const textContent = await page.$eval(CUSTOM_ELEMENT, e => e.textContent)
 //     //   const textContentLength = await page.$eval(CUSTOM_ELEMENT, e => e.textContent.length)
@@ -153,11 +153,11 @@
 //     // it('should render augmented content as smaller width than parent content width', async () => {
 //     //   const testValue = `${new Date()} Sartorial jean shorts actually, tattooed kickstarter direct trade try-hard woke four dollar toast truffaut. Green juice keffiyeh four dollar toast hot chicken pabst typewriter scenester before they sold out banh mi roof party bushwick ugh ennui edison bulb echo park. Street art edison bulb heirloom occupy health goth, cloud bread af small batch deep v crucifix intelligentsia try-hard. Wayfarers hexagon chartreuse, selvage lo-fi coloring book vape. Raw denim marfa taiyaki photo booth.`
 
-//     //   const ce = await service.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
+//     //   const ce = await ventrilo.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
 
-//     //   await service.setTitle(elementHandle, testValue)
+//     //   await ventrilo.setTitle(elementHandle, testValue)
 
-//     //   await service.waitForCustomEvent(MAX_TIMEOUT)
+//     //   await ventrilo.waitForCustomEvent(MAX_TIMEOUT)
 
 //     //   const parentWidth = await page.$eval(WRAPPER_SELELCTOR, e => e.offsetWidth)
 //     //   const elementWidth = await page.$eval(CUSTOM_ELEMENT, e => e.offsetWidth)
@@ -172,7 +172,7 @@
 //   //   it('should contentWidth for textContent', async () => {
 //   //     const testValue = `${new Date()} Sartorial jean shorts actually.`
 
-//   //     await service.setTitle(elementHandle, testValue)
+//   //     await ventrilo.setTitle(elementHandle, testValue)
 
 //   //     const contentWidth = await page.$eval(CUSTOM_ELEMENT, e => e.contentWidth)
 //   //     const offsetWidth = await page.$eval(CUSTOM_ELEMENT, e => e.offsetWidth)
@@ -182,14 +182,14 @@
 //   //   it('should render full content when wrapper is larger than textContent', async () => {
 //   //     const testValue = `${new Date()} Sartorial jean shorts actually.`
 
-//   //     const ce = await service.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
+//   //     const ce = await ventrilo.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
 
-//   //     await service.setTitle(elementHandle, testValue)
-//   //     await service.resizeElement(WRAPPER_SELELCTOR, 50)
+//   //     await ventrilo.setTitle(elementHandle, testValue)
+//   //     await ventrilo.resizeElement(WRAPPER_SELELCTOR, 50)
 
-//   //     await service.waitForCustomEvent(MAX_TIMEOUT)
+//   //     await ventrilo.waitForCustomEvent(MAX_TIMEOUT)
 
-//   //     await service.resizeElement(WRAPPER_SELELCTOR, 760)
+//   //     await ventrilo.resizeElement(WRAPPER_SELELCTOR, 760)
 //   //     await page.waitFor(500)
 
 //   //     const parentWidth = await page.$eval(WRAPPER_SELELCTOR, e => e.offsetWidth)
@@ -207,12 +207,12 @@
 //   //   it('should render augmented content when wrapper is smaller than textContent', async () => {
 //   //     const testValue = `${new Date()} Sartorial jean shorts actually.`
 
-//   //     const ce = await service.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
+//   //     const ce = await ventrilo.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
 
-//   //     await service.setTitle(elementHandle, testValue)
-//   //     await service.resizeElement(WRAPPER_SELELCTOR, 50)
+//   //     await ventrilo.setTitle(elementHandle, testValue)
+//   //     await ventrilo.resizeElement(WRAPPER_SELELCTOR, 50)
 
-//   //     await service.waitForCustomEvent(MAX_TIMEOUT)
+//   //     await ventrilo.waitForCustomEvent(MAX_TIMEOUT)
 
 //   //     const parentWidth = await page.$eval(WRAPPER_SELELCTOR, e => e.offsetWidth)
 //   //     const elementWidth = await page.$eval(CUSTOM_ELEMENT, e => e.offsetWidth)
@@ -232,12 +232,12 @@
 //   //   it(`should render truncated variation with new separator character`, async () => {
 //   //     const testValue = `${new Date()} Sartorial jean shorts actually, tattooed kickstarter direct trade try-hard woke four dollar toast truffaut. Green juice keffiyeh four dollar toast hot chicken pabst typewriter scenester before they sold out banh mi roof party bushwick ugh ennui edison bulb echo park. Street art edison bulb heirloom occupy health goth, cloud bread af small batch deep v crucifix intelligentsia try-hard. Wayfarers hexagon chartreuse, selvage lo-fi coloring book vape. Raw denim marfa taiyaki photo booth.`
 //   //     const testSeparator = '+'
-//   //     const ce = await service.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
+//   //     const ce = await ventrilo.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
 
-//   //     await service.setSeparator(elementHandle, testSeparator)
-//   //     await service.setTitle(elementHandle, testValue)
+//   //     await ventrilo.setSeparator(elementHandle, testSeparator)
+//   //     await ventrilo.setTitle(elementHandle, testValue)
 
-//   //     await service.waitForCustomEvent(MAX_TIMEOUT)
+//   //     await ventrilo.waitForCustomEvent(MAX_TIMEOUT)
 
 //   //     const textContent = await page.$eval(CUSTOM_ELEMENT, e => e.textContent)
 
@@ -248,12 +248,12 @@
 //   //   it(`should not render from attribute update`, async () => {
 //   //     const testValue = `${new Date()} Sartorial jean shorts actually, tattooed kickstarter direct trade try-hard woke four dollar toast truffaut. Green juice keffiyeh four dollar toast hot chicken pabst typewriter scenester before they sold out banh mi roof party bushwick ugh ennui edison bulb echo park. Street art edison bulb heirloom occupy health goth, cloud bread af small batch deep v crucifix intelligentsia try-hard. Wayfarers hexagon chartreuse, selvage lo-fi coloring book vape. Raw denim marfa taiyaki photo booth.`
 //   //     const testSeparator = '+'
-//   //     const ce = await service.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
+//   //     const ce = await ventrilo.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
 
-//   //     await service.setAttributeSeparator(elementHandle, testSeparator)
-//   //     await service.setTitle(elementHandle, testValue)
+//   //     await ventrilo.setAttributeSeparator(elementHandle, testSeparator)
+//   //     await ventrilo.setTitle(elementHandle, testValue)
 
-//   //     await service.waitForCustomEvent(MAX_TIMEOUT)
+//   //     await ventrilo.waitForCustomEvent(MAX_TIMEOUT)
 
 //   //     const textContent = await page.$eval(CUSTOM_ELEMENT, e => e.textContent)
 
@@ -267,17 +267,17 @@
 //   //   it(`should render new content from property change`, async () => {
 //   //     const testValue = `${new Date()} Sartorial jean shorts actually.`
 
-//   //     await service.setTitle(elementHandle, testValue)
+//   //     await ventrilo.setTitle(elementHandle, testValue)
 //   //     const defaultTextContent = await page.$eval(CUSTOM_ELEMENT, e => e.textContent)
 
 //   //     expect(defaultTextContent).to.equal(testValue)
 
 //   //     const updatedValue = `Updated: ${new Date()} Sartorial jean shorts actually, tattooed kickstarter direct trade try-hard woke four dollar toast truffaut. Green juice keffiyeh four dollar toast hot chicken pabst typewriter scenester before they sold out banh mi roof party bushwick ugh ennui edison bulb echo park. Street art edison bulb heirloom occupy health goth, cloud bread af small batch deep v crucifix intelligentsia try-hard. Wayfarers hexagon chartreuse, selvage lo-fi coloring book vape. Raw denim marfa taiyaki photo booth.`
 
-//   //     const ce = await service.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
+//   //     const ce = await ventrilo.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
 
-//   //     await service.setTitle(elementHandle, updatedValue)
-//   //     await service.waitForCustomEvent(MAX_TIMEOUT)
+//   //     await ventrilo.setTitle(elementHandle, updatedValue)
+//   //     await ventrilo.waitForCustomEvent(MAX_TIMEOUT)
 
 //   //     const textContent = await page.$eval(CUSTOM_ELEMENT, e => e.textContent)
 //   //     const textContentLength = await page.$eval(CUSTOM_ELEMENT, e => e.textContent.length)
@@ -292,17 +292,17 @@
 //   //   it(`should render new content from attribute change`, async () => {
 //   //     const testValue = `${new Date()} Sartorial jean shorts actually.`
 
-//   //     await service.setAttributeTitle(elementHandle, testValue)
+//   //     await ventrilo.setAttributeTitle(elementHandle, testValue)
 //   //     const defaultTextContent = await page.$eval(CUSTOM_ELEMENT, e => e.textContent)
 
 //   //     expect(defaultTextContent).to.equal(testValue)
 
 //   //     const updatedValue = `Updated: ${new Date()} Sartorial jean shorts actually, tattooed kickstarter direct trade try-hard woke four dollar toast truffaut. Green juice keffiyeh four dollar toast hot chicken pabst typewriter scenester before they sold out banh mi roof party bushwick ugh ennui edison bulb echo park. Street art edison bulb heirloom occupy health goth, cloud bread af small batch deep v crucifix intelligentsia try-hard. Wayfarers hexagon chartreuse, selvage lo-fi coloring book vape. Raw denim marfa taiyaki photo booth.`
 
-//   //     const ce = await service.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
+//   //     const ce = await ventrilo.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
 
-//   //     await service.setAttributeTitle(elementHandle, updatedValue)
-//   //     await service.waitForCustomEvent(MAX_TIMEOUT)
+//   //     await ventrilo.setAttributeTitle(elementHandle, updatedValue)
+//   //     await ventrilo.waitForCustomEvent(MAX_TIMEOUT)
 
 //   //     const textContent = await page.$eval(CUSTOM_ELEMENT, e => e.textContent)
 //   //     const textContentLength = await page.$eval(CUSTOM_ELEMENT, e => e.textContent.length)
@@ -319,11 +319,11 @@
 //   //   it(`should render truncated variation of title tag string`, async () => {
 //   //     const testValue = `${new Date()} Sartorial jean shorts actually, tattooed kickstarter direct trade try-hard woke four dollar toast truffaut. Green juice keffiyeh four dollar toast hot chicken pabst typewriter scenester before they sold out banh mi roof party bushwick ugh ennui edison bulb echo park. Street art edison bulb heirloom occupy health goth, cloud bread af small batch deep v crucifix intelligentsia try-hard. Wayfarers hexagon chartreuse, selvage lo-fi coloring book vape. Raw denim marfa taiyaki photo booth.`
 
-//   //     const ce = await service.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
+//   //     const ce = await ventrilo.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
 
-//   //     await service.setAttributeTitleBreak(elementHandle, 'center')
-//   //     await service.setTitle(elementHandle, testValue)
-//   //     await service.waitForCustomEvent(MAX_TIMEOUT)
+//   //     await ventrilo.setAttributeTitleBreak(elementHandle, 'center')
+//   //     await ventrilo.setTitle(elementHandle, testValue)
+//   //     await ventrilo.waitForCustomEvent(MAX_TIMEOUT)
 
 //   //     const textContent = await page.$eval(CUSTOM_ELEMENT, e => e.textContent)
 //   //     const textContentSeparatorIndex = await page.$eval(CUSTOM_ELEMENT, e => (
@@ -343,11 +343,11 @@
 //   //   it(`should render truncated variation on property change`, async () => {
 //   //     const testValue = `${new Date()} Sartorial jean shorts actually, tattooed kickstarter direct trade try-hard woke four dollar toast truffaut. Green juice keffiyeh four dollar toast hot chicken pabst typewriter scenester before they sold out banh mi roof party bushwick ugh ennui edison bulb echo park. Street art edison bulb heirloom occupy health goth, cloud bread af small batch deep v crucifix intelligentsia try-hard. Wayfarers hexagon chartreuse, selvage lo-fi coloring book vape. Raw denim marfa taiyaki photo booth.`
 
-//   //     const ce = await service.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
+//   //     const ce = await ventrilo.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
 
-//   //     await service.setAttributeTitleBreak(elementHandle, 'center')
-//   //     await service.setTitle(elementHandle, testValue)
-//   //     await service.waitForCustomEvent(MAX_TIMEOUT)
+//   //     await ventrilo.setAttributeTitleBreak(elementHandle, 'center')
+//   //     await ventrilo.setTitle(elementHandle, testValue)
+//   //     await ventrilo.waitForCustomEvent(MAX_TIMEOUT)
 
 //   //     const textContent = await page.$eval(CUSTOM_ELEMENT, e => e.textContent)
 //   //     const textContentSeparatorIndex = await page.$eval(CUSTOM_ELEMENT, e => {
@@ -370,11 +370,11 @@
 //   //   it(`should render truncated variation of title tag string`, async () => {
 //   //     const testValue = `${new Date()} Sartorial jean shorts actually, tattooed kickstarter direct trade try-hard woke four dollar toast truffaut. Green juice keffiyeh four dollar toast hot chicken pabst typewriter scenester before they sold out banh mi roof party bushwick ugh ennui edison bulb echo park. Street art edison bulb heirloom occupy health goth, cloud bread af small batch deep v crucifix intelligentsia try-hard. Wayfarers hexagon chartreuse, selvage lo-fi coloring book vape. Raw denim marfa taiyaki photo booth.`
 
-//   //     const ce = await service.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
+//   //     const ce = await ventrilo.customEventHandle(elementHandle, CUSTOM_EVENT_TYPE)
 
-//   //     await service.setTitleBreak(elementHandle, 'end')
-//   //     await service.setTitle(elementHandle, testValue)
-//   //     await service.waitForCustomEvent(MAX_TIMEOUT)
+//   //     await ventrilo.setTitleBreak(elementHandle, 'end')
+//   //     await ventrilo.setTitle(elementHandle, testValue)
+//   //     await ventrilo.waitForCustomEvent(MAX_TIMEOUT)
 
 //   //     const textContent = await page.$eval(CUSTOM_ELEMENT, e => e.textContent)
 //   //     const textContentLength = await page.$eval(CUSTOM_ELEMENT, e => e.textContent.length)
