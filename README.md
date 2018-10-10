@@ -2,7 +2,7 @@
 
 Single page DOM test execution environment. 
 
-To be used for Custom Element, Shadow DOM, and Custom Event and helper function library Ventriloquist for Puppeteer, Mocha, Chai, and Rollup.
+To be used for Custom Element, Shadow DOM, and Custom Event and helper function library (Ventrilo)[https://github.com/TravisMullen/ventrilo] for Puppeteer, Mocha, Chai, and Rollup.
 
 ## Todo
 
