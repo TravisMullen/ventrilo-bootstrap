@@ -45,7 +45,6 @@ before('Starting test server and assigning functions as global properties.', asy
   const browser = await puppeteer.launch(opts)
   const page = await browser.newPage()
   const definitions = {
-    // ventrilo,
     browser,
     page,
     expect,

@@ -1,6 +1,8 @@
 # Ventrilo Bootstrap
 
-Custom Element, Shadow DOM, and Custom Event test execution environment using Ventriloquist for Puppeteer, Mocha, Chai, and Rollup.
+Single page DOM test execution environment. 
+
+To be used for Custom Element, Shadow DOM, and Custom Event and helper function library Ventriloquist for Puppeteer, Mocha, Chai, and Rollup.
 
 ## Todo
 

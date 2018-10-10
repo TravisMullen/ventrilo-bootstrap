@@ -1,6 +1,6 @@
 {
   "name": "ventrilo-bootstrap",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "Custom Element, Shadow DOM, and Custom Event test execution environment using [Ventrilo](https://github.com/TravisMullen/ventrilo) for Puppeteer, Mocha, Chai, and Rollup.",
   "main": "dist/bootstrap.cjs.js",
   "module": "dist/bootstrap.esm.js",
