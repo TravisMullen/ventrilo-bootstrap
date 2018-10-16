@@ -1,6 +1,6 @@
 {
   "name": "ventrilo-bootstrap",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Custom Element, Shadow DOM, and Custom Event test execution environment using [Ventrilo](https://github.com/TravisMullen/ventrilo) for Puppeteer, Mocha, Chai, and Rollup.",
   "main": "dist/bootstrap.cjs.js",
   "module": "dist/bootstrap.esm.js",
@@ -32,6 +32,7 @@
     "prebuild": "npm run lint",
     "build": "rollup --config rollup.build.js",
     "pretest": "npm run build",
+    "test:browser": "mocha --reporter spec --require babel-core/register ./dist/bootstrap.esm.js --recursive './{src,test}/*.browser.*'",
     "test": "mocha --reporter spec --require babel-core/register ./dist/bootstrap.esm.js --recursive './{src,test}/*.{spec,test}.*'",
     "test:serve": "rollup --config rollup.test.js",
     "lint": "standard --fix './{src,test}/**/*.{js,mjs}' --verbose | snazzy"
@@ -39,6 +40,18 @@
   "config": {
     "ports": {
       "test": 10002
+    },
+    "puppeteer": {
+      "headless": false,
+      "defaultViewport": {
+        "width": 800,
+        "height": 600
+      },
+      "slowMo": 0,
+      "waitUntil": "domcontentloaded",
+      "args": [
+        "--some-custom-arg=helloWorld"
+      ]
     }
   },
   "babel": {

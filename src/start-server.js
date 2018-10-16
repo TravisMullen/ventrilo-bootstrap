@@ -1,7 +1,21 @@
 import { spawn, spawnSync } from 'child_process'
 import { writeFile, readFileSync } from 'fs'
 
+import { checkFile } from './check-file.js'
+
 const pidFile = './test-server.pid'
+
+const cleanUpProcess = pidFilePath => {
+  // check for ghost process and kill it
+  if (checkFile(pidFilePath)) {
+    const pid = readFileSync(pidFilePath, 'utf8')
+    const { status } = spawnSync('ps', [pid])
+    if (status === 0) {
+      console.log(`Killing lingering process: ${pid}`)
+      spawnSync('kill', [pid])
+    }
+  }
+}
 
 /**
  * Asynchronous process creation of a server for tests to run on.
@@ -14,16 +28,11 @@ const pidFile = './test-server.pid'
  * const runningServer = startServer('npm-script-name')
  */
 const startServer = (npmScript = 'serve') => {
-  // check for ghost process and kill it
-  const pid = readFileSync(pidFile, 'utf8')
-  const { status } = spawnSync('ps', [pid])
-  if (status === 0) {
-    spawnSync('kill', [pid])
-  }
+  cleanUpProcess(pidFile)
 
   // start server
   const serv = spawn('npm', ['run', npmScript])
-
+  // save process id
   writeFile(pidFile, `${serv.pid}`, 'utf8', () => {
     console.log(`Logging test server pid: ${serv.pid}`)
   })
