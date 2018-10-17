@@ -43,12 +43,13 @@ before('Starting test server and assigning functions as global properties.', asy
 
   const browser = await puppeteer.launch(defaultConfig)
   const page = await browser.newPage()
+  let DEBUG_BROWSER = false
   const definitions = {
     browser,
     page,
     expect,
     assert,
-    DEBUG_BROWSER: false,
+    DEBUG_BROWSER,
     SESSION_ID
   }
   /** Assign global variables
@@ -90,7 +91,7 @@ after('Stopping test server, closing page and browser, and reverting global prop
   /** Stop running server */
   await testServer.kill()
   /** Close pages and browser */
-  if (DEBUG_BROWSER === false) { // leave browser open for debugging
+  if (!DEBUG_BROWSER) { // leave browser open for debugging
     await page.close()
     await browser.close()
 
